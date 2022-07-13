@@ -9,10 +9,10 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <div class="columns-6">
-                        <table class="border-collapse mx-auto">
-                            <thead>
-                                <tr>
+                    <div>
+                        <table class="table table-fixed w-full">
+                            <thead class="table-header-group">
+                                <tr class="table-row">
                                     <th>ID</th>
                                     <th>Nombre</th>
                                     <th>Valor</th>
@@ -20,30 +20,28 @@
                                     <th>Accion</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="table-row-group">
                                 @foreach ($productsAll as $producto)
-                                <tr>
-                                    <td class="px-3">{{ $producto->id }}</td>
-                                    <td class="px-3">{{ $producto->nombre }}</td>
-                                    <td class="px-3">{{ $producto->valor }}</td>
-                                    <td class="px-3"> --- </td>
-                                    <td class="px-3">
-                                        <div>
-                                            <i class="material-icons">edit</i>
+                                <tr class="text-center">
+                                    <td>{{ $producto->id }}</td>
+                                    <td>{{ $producto->nombre }}</td>
+                                    <td>{{ $producto->valor }}</td>
+                                    <td> --- </td>
+                                    <td class="flex justify-center">
 
-                                            <!-- <i data-target="{{ $producto->id }}" :href="url('/productos/destroy/{{ $producto->id }}')" class="material-icons">delete_forever</i> -->
+                                        <i class="material-icons">edit</i>
+                                        <!-- <i data-target="{{ $producto->id }}" :href="url('/productos/destroy/{{ $producto->id }}')" class="material-icons">delete_forever</i> -->
+                                        {{Form::open([ 'method'  => 'DELETE', 'route' => [ 'productos', $producto->id ] ])}}
+                                        {{Form::button('<i class="material-icons">delete_forever</i>', array('type' => 'submit', 'class' => ''))}}
+                                        {{ Form::close() }}
 
-                                            {{Form::open([ 'method'  => 'DELETE', 'route' => [ 'productos', $producto->id ] ])}}
-                                            {{Form::button('<i class="material-icons">delete_forever</i>', array('type' => 'submit', 'class' => ''))}}
-                                            {{ Form::close() }}
-                                        </div>
                                     </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
                     </div>
-                    <x-button class="ml-3">
+                    <x-button class="my-3">
                         <x-responsive-nav-link class="flex items-center" :href="url('/productos/create')">
                             {{ __('Agregar Producto') }}
                         </x-responsive-nav-link>
