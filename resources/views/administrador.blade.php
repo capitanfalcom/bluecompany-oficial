@@ -19,6 +19,11 @@
                             Categorias
                         </x-responsive-nav-link>
                     </x-button>
+                    <!-- <x-button class="ml-3">
+                        <x-responsive-nav-link class="flex items-center" :href="url('/categorias')">
+                            Categorias
+                        </x-responsive-nav-link>
+                    </x-button> -->
 
                 </div>
             </div>
