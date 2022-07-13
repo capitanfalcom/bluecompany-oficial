@@ -25,7 +25,9 @@
                                     <td>{{ $categoria->nombre }}</td>
                                     <td>
                                         <div class="flex justify-center">
-                                            <i class="material-icons">edit</i>
+                                            <!-- <a :href="url('/categorias/create')">
+                                                <i class="material-icons">edit</i>
+                                            </a> -->
                                             {{Form::open([ 'method'  => 'DELETE', 'route' => [ 'categorias', $categoria->id ] ])}}
                                             {{Form::button('<i class="material-icons">delete_forever</i>', array('type' => 'submit', 'class' => ''))}}
                                             {{ Form::close() }}
@@ -37,9 +39,9 @@
                         </table>
                     </div>
                     <x-button class="my-3">
-                        <x-responsive-nav-link class="flex items-center" :href="url('/categorias/create')">
+                        <x-nav-link class="flex items-center text-white" :href="url('/categorias/create')">
                             {{ __('Agregar Categorias') }}
-                        </x-responsive-nav-link>
+                        </x-nav-link>
                     </x-button>
                 </div>
 

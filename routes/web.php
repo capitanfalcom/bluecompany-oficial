@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Resources\CategoriasCollection;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/xd', [ProductoController::class, 'show']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -32,16 +32,16 @@ Route::get('/administrador', function () {
 
 
 /* VIEWS */
-Route::group(['prefix'=>'productos', 'middleware' => 'auth'], function () {    
+Route::group(['prefix' => 'productos', 'middleware' => 'auth'], function () {
     Route::get('create', [ProductoController::class, 'create']);
     Route::get('edit', [ProductoController::class, 'edit']);
-    Route::get('', [ProductoController::class, 'index']);    
+    Route::get('', [ProductoController::class, 'index']);
 });
 
-Route::group(['prefix'=>'categorias', 'middleware' => 'auth'], function () {    
+Route::group(['prefix' => 'categorias', 'middleware' => 'auth'], function () {
     Route::get('create', [CategoriaController::class, 'create']);
     Route::get('edit', [CategoriaController::class, 'edit']);
-    Route::get('', [CategoriaController::class, 'index']);    
+    Route::get('', [CategoriaController::class, 'index']);
 });
 
 
@@ -63,7 +63,12 @@ Route::controller(ProductoController::class)
         /* Route::get('/productos', 'index'); */
         Route::post('/productos/store', 'store');
         Route::delete('/productos/destroy/{id}', 'destroy');
-
     });
+
+/* API */
+Route::group(['prefix' => 'api', 'middleware' => 'auth'], function () {
+    Route::get('productosAll', [ProductoController::class, 'getAllProducts']);
+    /* Route::get('productoOne', [ProductoController::class, 'getProducto']); */
+});
 
 require __DIR__ . '/auth.php';

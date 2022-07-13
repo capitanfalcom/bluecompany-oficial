@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ProductosCollection;
 use App\Models\Categorias;
 use Carbon\Carbon;
 
@@ -104,5 +105,18 @@ class ProductoController extends Controller
     {
         Productos::where('id', $id)->delete();
         return redirect('productos');
+    }
+
+    public function getAllProducts(){
+        $products = Productos::all();          
+        return ProductosCollection::collection($products);
+        /* return $products; */
+    }
+
+
+    public static function getProducto($id){
+        $product = Productos::select('*')->where('id', $id);
+        return json_encode($product);  
+
     }
 }

@@ -29,7 +29,7 @@
                                     <td> --- </td>
                                     <td class="flex justify-center">
 
-                                        <i class="material-icons">edit</i>
+                                        <!-- <i class="material-icons">edit</i> -->
                                         <!-- <i data-target="{{ $producto->id }}" :href="url('/productos/destroy/{{ $producto->id }}')" class="material-icons">delete_forever</i> -->
                                         {{Form::open([ 'method'  => 'DELETE', 'route' => [ 'productos', $producto->id ] ])}}
                                         {{Form::button('<i class="material-icons">delete_forever</i>', array('type' => 'submit', 'class' => ''))}}
@@ -42,9 +42,9 @@
                         </table>
                     </div>
                     <x-button class="my-3">
-                        <x-responsive-nav-link class="flex items-center" :href="url('/productos/create')">
+                        <x-nav-link class="flex items-center text-white" :href="url('/productos/create')">
                             {{ __('Agregar Producto') }}
-                        </x-responsive-nav-link>
+                        </x-nav-link>
                     </x-button>
                 </div>
             </div>

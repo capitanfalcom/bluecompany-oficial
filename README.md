@@ -15,4 +15,5 @@
     * "npm run dev"
  * Levantamos Laravel con el comando
     * "php artisan serve"
+ * Se puede consumir api con ruta "/api/productos" al momento de estar corriendo Laravel
   
