@@ -11,7 +11,7 @@
     * "php artisan db:seed --class=ProductoSeeder"
     * "php artisan db:seed --class=CategoriaSeeder"
  * Para levantar Tailwind y otras librerias pertenecientes a paquetes NPM, vamos a correr los siguientes comandos: 
-    * "npm intall"
+    * "npm install"
     * "npm run dev"
  * Levantamos Laravel con el comando
     * "php artisan serve"
