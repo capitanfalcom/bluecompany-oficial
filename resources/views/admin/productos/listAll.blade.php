@@ -42,20 +42,14 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        <!-- <x-button class="ml-3" onclick="{{ url('productos/create') }}">
-                            Agregar
-                        </x-button> -->
-
-                        <x-button class="ml-3">
-                            <x-responsive-nav-link class="flex items-center" :href="url('/productos/create')">
-                                {{ __('Agregar Producto') }}
-                            </x-responsive-nav-link>
-                        </x-button>
-
-
                     </div>
+                    <x-button class="ml-3">
+                        <x-responsive-nav-link class="flex items-center" :href="url('/productos/create')">
+                            {{ __('Agregar Producto') }}
+                        </x-responsive-nav-link>
+                    </x-button>
                 </div>
             </div>
         </div>
-    </div>    
+    </div>
 </x-app-layout>

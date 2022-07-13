@@ -9,12 +9,12 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                <div class="columns-6">
+                    <div class="columns-6">
                         <table class="border-collapse mx-auto">
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Nombre</th>                                    
+                                    <th>Nombre</th>
                                     <th>Accion</th>
                                 </tr>
                             </thead>
@@ -27,10 +27,10 @@
                                         <div>
                                             <i class="material-icons">edit</i>
 
-                                            
-                                            
-                                            {{Form::open([ 'method'  => 'DELETE', 'route' => [ 'categorias', $categoria->id ] ])}}                                                
-                                                {{Form::button('<i class="material-icons">delete_forever</i>', array('type' => 'submit', 'class' => ''))}}
+
+
+                                            {{Form::open([ 'method'  => 'DELETE', 'route' => [ 'categorias', $categoria->id ] ])}}
+                                            {{Form::button('<i class="material-icons">delete_forever</i>', array('type' => 'submit', 'class' => ''))}}
                                             {{ Form::close() }}
                                         </div>
                                     </td>
@@ -38,19 +38,13 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        <!-- <x-button class="ml-3" onclick="{{ url('productos/create') }}">
-                            Agregar
-                        </x-button> -->
-
-                        <x-button class="ml-3">
-                            <x-responsive-nav-link class="flex items-center" :href="url('/categorias/create')">
-                                {{ __('Agregar Categorias') }}
-                            </x-responsive-nav-link>
-                        </x-button>
-
-
                     </div>
                 </div>
+                <x-button class="ml-3">
+                    <x-responsive-nav-link class="flex items-center" :href="url('/categorias/create')">
+                        {{ __('Agregar Categorias') }}
+                    </x-responsive-nav-link>
+                </x-button>
             </div>
         </div>
     </div>

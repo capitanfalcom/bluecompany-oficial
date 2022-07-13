@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('administrador') }}">
-                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
+                    <img src="https://bluecompany.cl/assets/img/bluecompany-logo-blue.svg" alt="">
                     </a>
                 </div>
 
@@ -41,7 +41,7 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Cerrar Sesion') }}
                             </x-dropdown-link>
                         </form>
                     </x-slot>
